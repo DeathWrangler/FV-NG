@@ -1,0 +1,28 @@
+# dependencies
+node_modules/
+
+# large build artifacts / data (kept out of git: farmville.sqlite ~600MB, struts.jsonl ~120MB, ledgers)
+build/
+
+# databases / local logs / editor state
+*.sqlite
+*.log
+*.pid
+*.tmp
+
+# generated capture artifacts (debug output, renders)
+client/editor/captures/
+
+# local project notes / prompts / screenshots (not part of the repo)
+client-hud-plan.md
+client-rewrite-plan.md
+rpc-contract.md
+rpc-contract-reference.md
+sql-driven-build-prompt.md
+toolbar_slot*.png
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

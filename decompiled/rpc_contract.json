@@ -1,0 +1,2591 @@
+{
+ "UnwitherClockService.extendEnglandUnwitherClock": [
+  {
+   "class": "Classes/EnglandUnwitherClock.as",
+   "args": [
+    "this.m_numRecharges"
+   ]
+  }
+ ],
+ "NeighboringService.tutAddNeighbor": [
+  {
+   "class": "Classes/TutController.as",
+   "args": []
+  }
+ ],
+ "UserService.publishUserAction": [
+  {
+   "class": "Engine/Transactions/TPublishUserAction.as",
+   "args": [
+    "this.m_action",
+    "this.m_bundleData",
+    "this.m_strTargetIds",
+    "this.m_oneLine"
+   ]
+  }
+ ],
+ "UserService.sendUserNotification": [
+  {
+   "class": "Engine/Transactions/TSendNotification.as",
+   "args": [
+    "this.m_action",
+    "this.m_params",
+    "_loc1_"
+   ]
+  }
+ ],
+ "WorldService.sendZaspReport": [
+  {
+   "class": "Engine/Transactions/TSendZaspReport.as",
+   "args": [
+    "this.m_reports"
+   ]
+  }
+ ],
+ "DollarBundleService.BuyBundle": [
+  {
+   "class": "Transactions/DollarBundle.as",
+   "args": [
+    "this.m_paymentCode"
+   ]
+  }
+ ],
+ "UserService.initUser": [
+  {
+   "class": "Transactions/PreFetchTInitUser.as",
+   "args": [
+    "this.m_firstName",
+    "this.m_timezoneOffset",
+    "loadWorld",
+    "false",
+    "flashControllerInit"
+   ]
+  },
+  {
+   "class": "Transactions/TInitUser.as",
+   "args": [
+    "this.m_firstName",
+    "this.m_timezoneOffset",
+    "needsToLoadWorld",
+    "false",
+    "flashControllerInit"
+   ]
+  }
+ ],
+ "LicenseService.acquireLicense": [
+  {
+   "class": "Transactions/TAcquireLicense.as",
+   "args": [
+    "this.m_item.code",
+    "this.m_licenseCode"
+   ]
+  }
+ ],
+ "UserService.incrementActionCount": [
+  {
+   "class": "Transactions/TActionCount.as",
+   "args": [
+    "this.m_flagName"
+   ]
+  }
+ ],
+ "PhotoContestService.onSubmitGalleryVotes": [
+  {
+   "class": "Transactions/TActOnContestGalleryData.as",
+   "args": [
+    "this.m_params[\"eventId\"]",
+    "this.m_params[\"votes\"]"
+   ]
+  }
+ ],
+ "CommunityService.addCommunityFriend": [
+  {
+   "class": "Transactions/TAddCommunityFriend.as",
+   "args": [
+    "this.m_communityFriendUid"
+   ]
+  }
+ ],
+ "EquipmentWorldService.onAddPartToEquipmentInGarage": [
+  {
+   "class": "Transactions/TAddPartToEquipmentInGarage.as",
+   "args": [
+    "this.m_buildingId",
+    "this.m_key",
+    "this.m_isGift"
+   ]
+  }
+ ],
+ "WallToWallFeatureService.recordFriendSetAddition": [
+  {
+   "class": "Transactions/TAddToFriendSet.as",
+   "args": [
+    "this.m_uids",
+    "this.m_code"
+   ]
+  }
+ ],
+ "MessageService.setAllowEmail": [
+  {
+   "class": "Transactions/TAllowMessageEmails.as",
+   "args": [
+    "this.m_isAllow"
+   ]
+  }
+ ],
+ "FriendSetService.getBatchFriendSetData": [
+  {
+   "class": "Transactions/TBatchInitializeFriendSets.as",
+   "args": [
+    "params"
+   ]
+  }
+ ],
+ "CrossPromoService.beginOutBoundCrossPromo": [
+  {
+   "class": "Transactions/TBeginOutBoundCrossPromo.as",
+   "args": [
+    "this.m_action"
+   ]
+  }
+ ],
+ "CraftingService.": [
+  {
+   "class": "Transactions/TBeginRecipe.as",
+   "args": [
+    "+ METHOD_BEGIN_RECIPE",
+    "this.m_recipeId",
+    "this.m_ovenSlot"
+   ]
+  },
+  {
+   "class": "Transactions/TBuyRecipeRush.as",
+   "args": [
+    "+ functionName",
+    "this.m_recipeItem.id",
+    "this.m_recipeItem.serverStartTS",
+    "this.m_withCoins",
+    "this.m_recipeItem.ovenSlot"
+   ]
+  },
+  {
+   "class": "Transactions/TClaimFinishedRecipes.as",
+   "args": [
+    "+ METHOD_CLAIM_RECIPE",
+    "this.m_recipeId",
+    "this.m_ovenSlot"
+   ]
+  },
+  {
+   "class": "Transactions/TClaimMarketStallItem.as",
+   "args": [
+    "+ METHOD_CLAIM_MARKET_STALL_ITEM",
+    "this.m_Uid",
+    "this.m_BushelItemCode"
+   ]
+  },
+  {
+   "class": "Transactions/TCraftInstantRecipe.as",
+   "args": [
+    "+ METHOD_INSTANT_RECIPE",
+    "this.m_recipeId",
+    "this.m_trackMadeRecipe"
+   ]
+  }
+ ],
+ "BoraboraWorldService.": [
+  {
+   "class": "Transactions/TBoraboraDecorationPlace.as",
+   "args": [
+    "+ METHOD_PERFORM_ACTION",
+    "actionName",
+    "m_save",
+    "params"
+   ]
+  }
+ ],
+ "BreedingService.beginNewBreedingProject": [
+  {
+   "class": "Transactions/TBreedingProjectBegin.as",
+   "args": [
+    "this.m_featureName",
+    "this.m_trayIndex",
+    "this.m_ingredients"
+   ]
+  }
+ ],
+ "BreedingService.finishBreedingProject": [
+  {
+   "class": "Transactions/TBreedingProjectFinish.as",
+   "args": [
+    "this.m_featureName",
+    "this.m_trayIndex"
+   ]
+  }
+ ],
+ "BreedingService.addPurchasedHelp": [
+  {
+   "class": "Transactions/TBreedingProjectPurchaseHelp.as",
+   "args": [
+    "this.m_featureName",
+    "this.m_trayIndex"
+   ]
+  }
+ ],
+ "BreedingService.getPvPReward": [
+  {
+   "class": "Transactions/TBreedingPvPFeed.as",
+   "args": [
+    "this.m_featureName"
+   ]
+  }
+ ],
+ "BuriedTreasureService.on": [
+  {
+   "class": "Transactions/TBuriedTreasureAction.as",
+   "args": [
+    "+ this.m_action",
+    "this.m_treasureId"
+   ]
+  }
+ ],
+ "CollectionsService.buyAllCollectibles": [
+  {
+   "class": "Transactions/TBuyAllCollectibles.as",
+   "args": [
+    "this.m_collectionName"
+   ]
+  },
+  {
+   "class": "Transactions/TLECollections.as",
+   "args": [
+    "this.m_collectionName"
+   ]
+  }
+ ],
+ "LightningCollectionsService.buyAllCollectionItems": [
+  {
+   "class": "Transactions/TBuyAllLightningCollectionItems.as",
+   "args": [
+    "this.m_collectionCode"
+   ]
+  }
+ ],
+ "FarmService.buyUnlimitedAltGraphicLicense": [
+  {
+   "class": "Transactions/TBuyAltGraphicLicense.as",
+   "args": [
+    "this.m_itemName"
+   ]
+  }
+ ],
+ "PresentService.buyAndRegift": [
+  {
+   "class": "Transactions/TBuyAndSendPresent.as",
+   "args": [
+    "this.m_present.code",
+    "String(this.m_friendListUIDs[0])",
+    "this.m_itemContext"
+   ]
+  }
+ ],
+ "PresentService.buyAndSend": [
+  {
+   "class": "Transactions/TBuyAndSendPresent.as",
+   "args": [
+    "this.m_present.name",
+    "this.m_friendListUIDs",
+    "this.m_itemContext",
+    "this.m_extraItemData"
+   ]
+  }
+ ],
+ "AvatarService.buyAvatarItem": [
+  {
+   "class": "Transactions/TBuyAvatarItem.as",
+   "args": [
+    "this.m_avatarItem.itemId"
+   ]
+  }
+ ],
+ "FarmService.onPurchaseBushel": [
+  {
+   "class": "Transactions/TBuyBushel.as",
+   "args": [
+    "this.m_bushelCode",
+    "this.m_recipeId",
+    "this.m_quantity"
+   ]
+  }
+ ],
+ "FarmService.onPurchaseRecipeBundle": [
+  {
+   "class": "Transactions/TBuyBushelBundle.as",
+   "args": [
+    "this.m_recipe",
+    "this.m_amount"
+   ]
+  }
+ ],
+ "ChristmasCharityBundleService.BuyBundle": [
+  {
+   "class": "Transactions/TBuyCharityBundle.as",
+   "args": [
+    "this.m_item.name"
+   ]
+  }
+ ],
+ "FarmService.buyConsumablePackage": [
+  {
+   "class": "Transactions/TBuyConsumables.as",
+   "args": [
+    "this.m_item.name"
+   ]
+  }
+ ],
+ "CraftingService.onBuyCraftedGoods": [
+  {
+   "class": "Transactions/TBuyCraftedGood.as",
+   "args": [
+    "this.m_buyGoodsQueue"
+   ]
+  }
+ ],
+ "UserService.buyCurrency": [
+  {
+   "class": "Transactions/TBuyCurrency.as",
+   "args": [
+    "this.m_itemName",
+    "this.m_sourceTrackingString"
+   ]
+  }
+ ],
+ "FarmService.buyFuel": [
+  {
+   "class": "Transactions/TBuyFuel.as",
+   "args": [
+    "this.m_item.name",
+    "this.m_isGift"
+   ]
+  }
+ ],
+ "UserService.buyItemPutGiftbox": [
+  {
+   "class": "Transactions/TBuyItemPutGiftbox.as",
+   "args": [
+    "this.m_item.name",
+    "this.m_quantity",
+    "this.m_forceGift"
+   ]
+  }
+ ],
+ "LightningCollectionsService.buyCollectionItem": [
+  {
+   "class": "Transactions/TBuyLightningCollectionItem.as",
+   "args": [
+    "this.m_itemCode"
+   ]
+  }
+ ],
+ "LimitedSaleService.purchaseSaleItem": [
+  {
+   "class": "Transactions/TBuyLimitedSaleItem.as",
+   "args": [
+    "this.m_itemName"
+   ]
+  }
+ ],
+ "MysteryBoxBalloonService.buyMysteryItem": [
+  {
+   "class": "Transactions/TBuyMysteryGiftGameItem.as",
+   "args": [
+    "this.m_boxName",
+    "this.m_tileID"
+   ]
+  }
+ ],
+ "MysteryBoxBalloonService.play": [
+  {
+   "class": "Transactions/TBuyMysteryGiftTurn.as",
+   "args": [
+    "this.m_boxName",
+    "this.m_targetID"
+   ]
+  }
+ ],
+ "SeedPackageService.onBuySeedPackage": [
+  {
+   "class": "Transactions/TBuySeedPackage.as",
+   "args": [
+    "this.m_seedName",
+    "this.m_amount"
+   ]
+  }
+ ],
+ "FarmService.onPurchaseSiloBushel": [
+  {
+   "class": "Transactions/TBuySiloBushel.as",
+   "args": [
+    "this.m_bushelCode",
+    "this.m_quantity"
+   ]
+  }
+ ],
+ "FarmService.": [
+  {
+   "class": "Transactions/TBuyTheme.as",
+   "args": [
+    "+ METHOD_BUY_THEME",
+    "this.m_item.name"
+   ]
+  },
+  {
+   "class": "Transactions/TChangeTheme.as",
+   "args": [
+    "+ METHOD_CHANGE_THEME",
+    "this.m_item.name"
+   ]
+  },
+  {
+   "class": "Transactions/TExpandFarm.as",
+   "args": [
+    "+ METHOD_EXPAND_FARM",
+    "this.m_itemName",
+    "this.m_currencyUnit"
+   ]
+  }
+ ],
+ "FarmService.buyTurboChargers": [
+  {
+   "class": "Transactions/TBuyTurboChargers.as",
+   "args": [
+    "this.m_item.name"
+   ]
+  }
+ ],
+ "UserService.conditionallyRemoveFriendRewards": [
+  {
+   "class": "Transactions/TCancelFriendReward.as",
+   "args": [
+    "this.m_rewardUrls"
+   ]
+  }
+ ],
+ "CraftingService.onCancelRecipe": [
+  {
+   "class": "Transactions/TCancelRecipe.as",
+   "args": [
+    "this.m_recipe.id",
+    "this.m_recipe.serverStartTS"
+   ]
+  }
+ ],
+ "ItemFriendSetService.chooseFriendSetReward": [
+  {
+   "class": "Transactions/TChooseFriendSetReward.as",
+   "args": [
+    "this.m_friendSet.code",
+    "this.m_worldId",
+    "this.m_friendSet.index",
+    "this.m_rewardItemCode"
+   ]
+  }
+ ],
+ "CIPService.grantPermission": [
+  {
+   "class": "Transactions/TCIPGdp.as",
+   "args": []
+  }
+ ],
+ "CIPService.sawTOS": [
+  {
+   "class": "Transactions/TCIPTos.as",
+   "args": []
+  }
+ ],
+ "CrossPromoService.claimReward": [
+  {
+   "class": "Transactions/TClaimCrossPromoReward.as",
+   "args": [
+    "this.m_promoId"
+   ]
+  }
+ ],
+ "CraftingService.onClaimFreeCottage": [
+  {
+   "class": "Transactions/TClaimFreeCottage.as",
+   "args": [
+    "this.m_SelectionItemCode"
+   ]
+  }
+ ],
+ "CraftingService.onClaimReward": [
+  {
+   "class": "Transactions/TClaimMarketReward.as",
+   "args": [
+    "this.m_Selection",
+    "this.m_Picks"
+   ]
+  }
+ ],
+ "TradingGoodService.onClaimSellerReward": [
+  {
+   "class": "Transactions/TClaimSellerReward.as",
+   "args": [
+    "\":\" + this.m_order.ordererId",
+    "this.m_order.itemCode",
+    "this.m_order.orderType"
+   ]
+  }
+ ],
+ "CraftingService.onCloseStall": [
+  {
+   "class": "Transactions/TCloseMarketStall.as",
+   "args": [
+    "this.m_MarketStallObjectId"
+   ]
+  }
+ ],
+ "CollectionsService.onTradeIn": [
+  {
+   "class": "Transactions/TCollectionTradeIn.as",
+   "args": [
+    "this.m_collectionName"
+   ]
+  }
+ ],
+ "CollectionsService.onClaimReward": [
+  {
+   "class": "Transactions/TCollectionTradeIn.as",
+   "args": [
+    "this.m_collectionName"
+   ]
+  }
+ ],
+ "CommunityGoalsService.getProgressForTask": [
+  {
+   "class": "Transactions/TCommunityGoalsGetProgress.as",
+   "args": [
+    "this.m_task.name"
+   ]
+  }
+ ],
+ "CommunityService.setAutoSendCommunityNeighborPermission": [
+  {
+   "class": "Transactions/TCommunityV2AutoSend.as",
+   "args": [
+    "this.m_opted_in"
+   ]
+  }
+ ],
+ "CraftingService.onCompleteCottageTutorial": [
+  {
+   "class": "Transactions/TCompleteCottageTutorial.as",
+   "args": []
+  }
+ ],
+ "FertilizerService.completeFertilize": [
+  {
+   "class": "Transactions/TCompleteFertilize.as",
+   "args": [
+    "this.m_fertilizerHostId.toString()"
+   ]
+  }
+ ],
+ "SuperCropsService.completeFriendSet": [
+  {
+   "class": "Transactions/TCompleteFriendSet.as",
+   "args": [
+    "(this.m_friendSet as SuperCropFriendSet).cropCode"
+   ]
+  }
+ ],
+ "SocialPlumbingService.updateDailyTask": [
+  {
+   "class": "Transactions/TCompleteSocialPlumbingAction.as",
+   "args": [
+    "this.m_className",
+    "this.m_targetFriendId"
+   ]
+  }
+ ],
+ "UserService.confirmFbPermissionRequest": [
+  {
+   "class": "Transactions/TConfirmFbPermissionRequest.as",
+   "args": [
+    "this.m_forceFql"
+   ]
+  }
+ ],
+ "InGameConsoleService.": [
+  {
+   "class": "Transactions/TConsoleCommand.as",
+   "args": [
+    "+ this.m_commandName",
+    "com.adobe.serialization.json.JSON.encode(this.m_commandParams)"
+   ]
+  }
+ ],
+ "CraftingService.onMarkCottageHistorySeen": [
+  {
+   "class": "Transactions/TCottageHistorySeen.as",
+   "args": [
+    "this.m_craftType"
+   ]
+  }
+ ],
+ "CraftingService.onBuyCraftUpgrade": [
+  {
+   "class": "Transactions/TCraftBuyUpgrade.as",
+   "args": [
+    "this.m_craftType",
+    "this.m_isRushUpgrade"
+   ]
+  }
+ ],
+ "W2WFeatureService.onGetAndPublishReward": [
+  {
+   "class": "Transactions/TCreateAndPublishW2W.as",
+   "args": [
+    "m_action",
+    "m_bundleData",
+    "m_strTargetIds[0]",
+    "this.m_featureName",
+    "this.m_feedName"
+   ]
+  }
+ ],
+ "UserContentService.onCreateFarmstamaticPhoto": [
+  {
+   "class": "Transactions/TCreateFarmstamaticPhoto.as",
+   "args": [
+    "m_featureName",
+    "m_encodedImage",
+    "m_imageType",
+    "params"
+   ]
+  }
+ ],
+ "UserContentService.onCreateImage": [
+  {
+   "class": "Transactions/TCreateImage.as",
+   "args": [
+    "this.m_featureName",
+    "this.m_encodedImage",
+    "this.m_imageType"
+   ]
+  }
+ ],
+ "LonelyCowService.createLonelyAnimal": [
+  {
+   "class": "Transactions/TCreateLonelyCow.as",
+   "args": []
+  }
+ ],
+ "UserService.customizeUnwitherRingData": [
+  {
+   "class": "Transactions/TCustomizeUnwitherRing.as",
+   "args": [
+    "this.m_ring",
+    "this.m_ringID"
+   ]
+  }
+ ],
+ "DollarBundleService.getBundleDiscount": [
+  {
+   "class": "Transactions/TDollarBundleDiscount.as",
+   "args": []
+  }
+ ],
+ "DragonBreedingService.onAskForFire": [
+  {
+   "class": "Transactions/TDragonBreeding.as",
+   "args": [
+    "this.m_itemCode"
+   ]
+  }
+ ],
+ "DragonBreedingService.onAskForHerbs": [
+  {
+   "class": "Transactions/TDragonBreeding.as",
+   "args": [
+    "this.m_itemCode"
+   ]
+  }
+ ],
+ "EnglishSweepstakesService.onClaimFirstEntry": [
+  {
+   "class": "Transactions/TEnterSweepstakes.as",
+   "args": []
+  }
+ ],
+ "EquipmentWorldService.": [
+  {
+   "class": "Transactions/TEquipmentAction.as",
+   "args": [
+    "+ METHOD_USE_EQUIPMENT",
+    "this.m_action",
+    "this.m_equipmentBundle",
+    "this.m_plotBundle",
+    "this.m_itemName"
+   ]
+  }
+ ],
+ "CraftingService.onExchangeBushels": [
+  {
+   "class": "Transactions/TExchangeBushels.as",
+   "args": [
+    "this.m_bushelItemCode"
+   ]
+  }
+ ],
+ "W2WFeatureService.getAllFeatureFriends": [
+  {
+   "class": "Transactions/TExpansionInvite.as",
+   "args": [
+    "ExpansionInviteWindow.EXPANSION_INVITE_FEATURE_NAME",
+    "ExpansionInviteWindow.EXPANSION_INVITE_FEED_NAME"
+   ]
+  }
+ ],
+ "FarmRunQuestService.shareReward": [
+  {
+   "class": "Transactions/TFarmRunQuestShare.as",
+   "args": [
+    "this.m_featureName",
+    "this.m_ItemCode"
+   ]
+  }
+ ],
+ "UserFeedService.logFieldPlantedEvent": [
+  {
+   "class": "Transactions/TFieldPlantedEvent.as",
+   "args": [
+    "this.m_seedType"
+   ]
+  }
+ ],
+ "FishingService.": [
+  {
+   "class": "Transactions/TFishing.as",
+   "args": [
+    "+ this.m_type",
+    "this.m_extraData"
+   ]
+  }
+ ],
+ "FleaMarketService.": [
+  {
+   "class": "Transactions/TFleaMarket.as",
+   "args": [
+    "+ this.m_transactionType",
+    "this.m_extraData"
+   ]
+  }
+ ],
+ "UserService.freeCoins": [
+  {
+   "class": "Transactions/TFreeCoins.as",
+   "args": []
+  }
+ ],
+ "FriendSetService.buyLevel": [
+  {
+   "class": "Transactions/TFriendSetBuyLevel.as",
+   "args": [
+    "this.m_friendSet.code",
+    "this.m_level"
+   ]
+  }
+ ],
+ "FriendSetService.": [
+  {
+   "class": "Transactions/TFriendSetCompleteSeen.as",
+   "args": [
+    "+ METHOD_FRIEND_SET_COMPLETE_SEEN",
+    "this.m_friendSetCode",
+    "this.m_remove"
+   ]
+  }
+ ],
+ "FarmService.getFuelForCoinsRewardUrl": [
+  {
+   "class": "Transactions/TFuelForCoinsShare.as",
+   "args": []
+  }
+ ],
+ "CraftingService.onGetAddCraftingCrewReward": [
+  {
+   "class": "Transactions/TGetAddCraftingCrewReward.as",
+   "args": [
+    "this.m_craftType"
+   ]
+  }
+ ],
+ "UserService.getAskItemFriends": [
+  {
+   "class": "Transactions/TGetAskItemFriends.as",
+   "args": [
+    "this.m_requestType",
+    "this.m_featureName",
+    "this.m_requestItemName",
+    "this.m_specs",
+    "this.m_startDay",
+    "this.m_endDay"
+   ]
+  },
+  {
+   "class": "Transactions/TGetSendRequestGiftsFriendsList.as",
+   "args": [
+    "MFSConstants.FB_REQ2_REQUESTTYPE_ASKITEMS",
+    "\"\"",
+    "this.m_requestItemName",
+    "this.m_friendSpec"
+   ]
+  }
+ ],
+ "UserService.getAvatarData": [
+  {
+   "class": "Transactions/TGetAvatarData.as",
+   "args": [
+    "this.m_userId.toString()"
+   ]
+  }
+ ],
+ "CraftingService.onGetBushelRequestFeed": [
+  {
+   "class": "Transactions/TGetBushelRequestFeed.as",
+   "args": [
+    "this.m_bushelItemCode"
+   ]
+  }
+ ],
+ "W2WFeatureService.onGetEligibleW2WRecipients": [
+  {
+   "class": "Transactions/TGetEligibleW2WRecipients.as",
+   "args": [
+    "this.m_featureName",
+    "this.m_feedName"
+   ]
+  }
+ ],
+ "FriendListService.getFriendsForR2FreeGiftsInterstitial": [
+  {
+   "class": "Transactions/TGetFreeGiftsFriendsList.as",
+   "args": []
+  }
+ ],
+ "FriendService.getFriendsDataForUids": [
+  {
+   "class": "Transactions/TGetFriendsDataForUids.as",
+   "args": [
+    "this.m_uids"
+   ]
+  }
+ ],
+ "UserService.getFriendSetFriends": [
+  {
+   "class": "Transactions/TGetFriendSetFriends.as",
+   "args": [
+    "this.m_specs",
+    "this.m_featureName",
+    "this.m_friendSetCode",
+    "this.m_currentFriendSet"
+   ]
+  }
+ ],
+ "FriendService.getFriendsMetaDataForUids": [
+  {
+   "class": "Transactions/TGetFriendsMetaDataForUids.as",
+   "args": [
+    "this.m_uids"
+   ]
+  }
+ ],
+ "UserService.getGiftboxErrorState": [
+  {
+   "class": "Transactions/TGetGiftBoxErrors.as",
+   "args": []
+  }
+ ],
+ "ZAPIClientService.getHarvestEmailPref": [
+  {
+   "class": "Transactions/TGetHarvestEmailPref.as",
+   "args": []
+  }
+ ],
+ "FriendListService.getIneligibleGiftRecipients": [
+  {
+   "class": "Transactions/TGetIneligibleGiftRecipients.as",
+   "args": []
+  }
+ ],
+ "LeaderboardService.getBatchFriendLists": [
+  {
+   "class": "Transactions/TGetLeaderboardFriendLists.as",
+   "args": [
+    "leaderboardNames"
+   ]
+  }
+ ],
+ "LonelyAnimalFriendSetService.getLonelyAnimalFriendSetProgress": [
+  {
+   "class": "Transactions/TGetLonelyAnimalFriendSetProgress.as",
+   "args": [
+    "this.m_friendSetCode",
+    "this.m_friendSetWorldCode"
+   ]
+  }
+ ],
+ "LimitedQuantityBundleService.getBundlesRemaining": [
+  {
+   "class": "Transactions/TGetLQBundleRemaining.as",
+   "args": [
+    "this.m_item.name"
+   ]
+  }
+ ],
+ "CraftingService.onGetMarketStallRewardUrl": [
+  {
+   "class": "Transactions/TGetMarketStallRewardUrl.as",
+   "args": [
+    "this.m_StallOwner",
+    "this.m_LastBushelCode"
+   ]
+  }
+ ],
+ "CraftingService.onRefreshMarketView": [
+  {
+   "class": "Transactions/TGetMarketView.as",
+   "args": []
+  }
+ ],
+ "UserService.getMOTD": [
+  {
+   "class": "Transactions/TGetMOTD.as",
+   "args": [
+    "this.m_motdSeenFlag"
+   ]
+  }
+ ],
+ "MysteryBoxBalloonService.getMysteryLoot": [
+  {
+   "class": "Transactions/TGetMysteryLoot.as",
+   "args": [
+    "this.m_boxName"
+   ]
+  }
+ ],
+ "FriendListService.getFriendsForR2InviteInterstitial": [
+  {
+   "class": "Transactions/TGetNeighborInviteFriends.as",
+   "args": []
+  }
+ ],
+ "WorldService.getObjectPlaceRewardLink": [
+  {
+   "class": "Transactions/TGetObjectPlaceRewardLink.as",
+   "args": [
+    "this.m_itemName"
+   ]
+  }
+ ],
+ "CrossPromoService.getOutBoundPromoUrl": [
+  {
+   "class": "Transactions/TGetOutBoundPromoUrl.as",
+   "args": [
+    "this.m_promoId"
+   ]
+  }
+ ],
+ "FriendListService.getFriendsForR2ReactivationInterstitial": [
+  {
+   "class": "Transactions/TGetReactivateFriends.as",
+   "args": []
+  }
+ ],
+ "UserService.getRecentlyPlayedFriendsForGifts": [
+  {
+   "class": "Transactions/TGetRecentlyPlayedFriends.as",
+   "args": [
+    "this.m_limitFriends"
+   ]
+  }
+ ],
+ "UserService.getSendFlashGiftFriends": [
+  {
+   "class": "Transactions/TGetSendFlashGiftFriends.as",
+   "args": [
+    "this.m_requestItemName",
+    "this.m_specs"
+   ]
+  }
+ ],
+ "FriendListService.getFriendsForR2FreeGifts": [
+  {
+   "class": "Transactions/TGetSendFreeGiftsFriendsList.as",
+   "args": [
+    "this.m_friendSpec"
+   ]
+  }
+ ],
+ "UserService.getSevenDayLapsedFriendsForGifts": [
+  {
+   "class": "Transactions/TGetSevenDayLapsers.as",
+   "args": []
+  }
+ ],
+ "SocialProofService.getSocialProofFriendData": [
+  {
+   "class": "Transactions/TGetSocialProofFriendData.as",
+   "args": []
+  }
+ ],
+ "EnglishSweepstakesService.onClaimShareReward": [
+  {
+   "class": "Transactions/TGetSweepstakesReward.as",
+   "args": []
+  }
+ ],
+ "UserService.getUnwitherRingData": [
+  {
+   "class": "Transactions/TGetUnwitherRingData.as",
+   "args": [
+    "this.m_ringID"
+   ]
+  }
+ ],
+ "CraftingService.onRefreshUserOffering": [
+  {
+   "class": "Transactions/TGetUserMarketStallInventory.as",
+   "args": [
+    "this.m_Uid"
+   ]
+  }
+ ],
+ "W2WFeatureService.onGetReward": [
+  {
+   "class": "Transactions/TGetW2WReward.as",
+   "args": [
+    "this.m_featureName",
+    "this.m_feedName",
+    "this.m_hitUid.toString()",
+    "this.m_targetUid.toString()"
+   ]
+  }
+ ],
+ "ZyngaAdService.onCreateBrandedItemReward": [
+  {
+   "class": "Transactions/TGetZapPlaceReward.as",
+   "args": [
+    "this.m_brandedObject.brandPromoData.brandPromoName",
+    "this.m_brandedObject.name"
+   ]
+  }
+ ],
+ "CollectionsService.addGiftItemToCollection": [
+  {
+   "class": "Transactions/TGiftCollections.as",
+   "args": [
+    "this.m_itemCode"
+   ]
+  }
+ ],
+ "GiftFlowerDecorationService.giftHarvestedItem": [
+  {
+   "class": "Transactions/TGiftFlowerDecorationNoShed.as",
+   "args": [
+    "this.m_seedName",
+    "this.m_plotId"
+   ]
+  }
+ ],
+ "ZAPIClientService.sendEmailFeed": [
+  {
+   "class": "Transactions/TGiftGive.as",
+   "args": [
+    "this.m_action",
+    "this.m_bundleData"
+   ]
+  }
+ ],
+ "EquipmentWorldService.onGiftVehiclePart": [
+  {
+   "class": "Transactions/TGiftVehiclePart.as",
+   "args": []
+  }
+ ],
+ "UserService.grantDowngradeCoins": [
+  {
+   "class": "Transactions/TGrantDowngradeCoins.as",
+   "args": [
+    "this.m_campaignName",
+    "this.m_itemName"
+   ]
+  }
+ ],
+ "ZAPIClientService.grantEmailPermissionWithGift": [
+  {
+   "class": "Transactions/TGrantEmailPermission.as",
+   "args": [
+    "this.m_permissionSource"
+   ]
+  }
+ ],
+ "ZAPIClientService.grantEmailPermission": [
+  {
+   "class": "Transactions/TGrantEmailPermission.as",
+   "args": []
+  }
+ ],
+ "SNPermissionsService.grantExtendedPermissionsWithGift": [
+  {
+   "class": "Transactions/TGrantExtendedPermissions.as",
+   "args": []
+  }
+ ],
+ "FlashUpgradeGiftService.grantFlashUpgradeEnabledGift": [
+  {
+   "class": "Transactions/TGrantFlashUpgradeGift.as",
+   "args": []
+  }
+ ],
+ "ZCacheGiftService.grantZCacheEnabledGift": [
+  {
+   "class": "Transactions/TGrantZCacheGift.as",
+   "args": []
+  }
+ ],
+ "GrowableService.": [
+  {
+   "class": "Transactions/TGrowableUseConsumable.as",
+   "args": [
+    "+ this.m_methodName",
+    "this.m_resource.storageId",
+    "this.m_numConsumablesUsed"
+   ]
+  }
+ ],
+ "HolidayCountdownService.buyItemByIndex": [
+  {
+   "class": "Transactions/THolidayCountdownBuyItem.as",
+   "args": [
+    "this.m_index"
+   ]
+  }
+ ],
+ "HolidayCountdownService.buyBonusItem": [
+  {
+   "class": "Transactions/THolidayCountdownBuyItem.as",
+   "args": []
+  }
+ ],
+ "HolidayCountdownService.completeNow": [
+  {
+   "class": "Transactions/THolidayCountdownCompleteNow.as",
+   "args": [
+    "this.m_completeNowPrice"
+   ]
+  }
+ ],
+ "HolidayCountdownService.setSeenWhatIsThis": [
+  {
+   "class": "Transactions/THolidayCountdownSeenWhatIsThis.as",
+   "args": [
+    "this.m_count"
+   ]
+  }
+ ],
+ "HolidayCountdownService.unlockIndex": [
+  {
+   "class": "Transactions/THolidayCountdownUnlockItem.as",
+   "args": [
+    "this.m_index"
+   ]
+  }
+ ],
+ "LonelyAnimalFriendSetService.getLonelyAnimalFriendSetData": [
+  {
+   "class": "Transactions/TInitializeLonelyAnimalFriendSet.as",
+   "args": [
+    "this.m_friendSet.code",
+    "this.m_friendSet.index"
+   ]
+  }
+ ],
+ "SuperCropsService.getProgress": [
+  {
+   "class": "Transactions/TInitializeSuperCropsFriendSet.as",
+   "args": [
+    "this.m_friendSet.cropCode"
+   ]
+  }
+ ],
+ "IntegratedCrossGameGiftingService.grantOnboardingMailbox": [
+  {
+   "class": "Transactions/TIntegratedCrossGameOnboarding.as",
+   "args": [
+    "this.m_gameId"
+   ]
+  }
+ ],
+ "IntegratedCrossGameGiftingService.pruneSeenReceivedGifts": [
+  {
+   "class": "Transactions/TIntegratedCrossGamePurgeReceived.as",
+   "args": [
+    "this.m_gameId"
+   ]
+  }
+ ],
+ "IntegratedCrossGameGiftingService.sendGiftToTargetGame": [
+  {
+   "class": "Transactions/TIntegratedCrossGameSendItem.as",
+   "args": [
+    "this.m_gameId",
+    "this.m_giftName"
+   ]
+  }
+ ],
+ "UserService.incrementIntervalActionCount": [
+  {
+   "class": "Transactions/TIntervalActionCount.as",
+   "args": [
+    "this.m_flagName",
+    "this.m_timeInterval"
+   ]
+  }
+ ],
+ "IsraelInnovationService.getProgressForTask": [
+  {
+   "class": "Transactions/TIsraelCommunityGoalsGetProgress.as",
+   "args": [
+    "this.m_task.name"
+   ]
+  }
+ ],
+ "UserService.buyLEBundleItems": [
+  {
+   "class": "Transactions/TLEBundleBuy.as",
+   "args": [
+    "this.m_itemCodes"
+   ]
+  }
+ ],
+ "UserService.declineLEBundle": [
+  {
+   "class": "Transactions/TLEBundleDecline.as",
+   "args": []
+  }
+ ],
+ "CollectionsService.addItemToCollection": [
+  {
+   "class": "Transactions/TLECollections.as",
+   "args": [
+    "this.m_itemCode"
+   ]
+  }
+ ],
+ "LightningCollectionsService.onStoreCollection": [
+  {
+   "class": "Transactions/TLightningCollectionTradeIn.as",
+   "args": [
+    "this.m_collectionCode"
+   ]
+  }
+ ],
+ "PresentService.buyAndSendLimitedGift": [
+  {
+   "class": "Transactions/TLimitedGiftingSend.as",
+   "args": [
+    "this.m_featureName",
+    "this.m_recipients",
+    "ITEMCONTEXT_LIMITEDGIFT",
+    "null",
+    "this.m_retryCount",
+    "this.m_isMultiGiftSend",
+    "this.m_itemIndexArray"
+   ]
+  }
+ ],
+ "WorldService.": [
+  {
+   "class": "Transactions/TLoadNeighbor.as",
+   "args": [
+    "+ METHOD_LOAD_NEIGHBOR_WORLD",
+    "this.m_neighborId"
+   ]
+  },
+  {
+   "class": "Transactions/TWorldState.as",
+   "args": [
+    "+ METHOD_PERFORM_ACTION",
+    "actionName",
+    "this.m_save",
+    "params"
+   ]
+  }
+ ],
+ "NPCService.": [
+  {
+   "class": "Transactions/TLoadNPC.as",
+   "args": [
+    "+ METHOD_LOAD_WORLD",
+    "this.m_npcId"
+   ]
+  }
+ ],
+ "StaticWorldService.": [
+  {
+   "class": "Transactions/TLoadStaticWorld.as",
+   "args": [
+    "+ METHOD_LOAD_WORLD",
+    "this.m_worldType"
+   ]
+  }
+ ],
+ "LonelyCowService.getRewardAndFeedData": [
+  {
+   "class": "Transactions/TLonelyAnimalFeedPost.as",
+   "args": [
+    "animalName",
+    "imageUrl",
+    "this.m_friendSetIndex"
+   ]
+  }
+ ],
+ "LotteryService.": [
+  {
+   "class": "Transactions/TLottery.as",
+   "args": [
+    "+ this.m_transactionType",
+    "this.m_extraData"
+   ]
+  }
+ ],
+ "MadagascarInnovationService.getProgressForTask": [
+  {
+   "class": "Transactions/TMadagascarCommunityGoalsGetProgress.as",
+   "args": [
+    "this.m_task.name"
+   ]
+  }
+ ],
+ "LonelyAnimalFriendSetService.markLonelyAnimalFriendSet": [
+  {
+   "class": "Transactions/TMarkLonelyAnimalFriendSet.as",
+   "args": [
+    "this.m_progress",
+    "this.m_friendSet.code",
+    "this.m_friendSet.index"
+   ]
+  }
+ ],
+ "FarmQuestService.interactedWithQuest": [
+  {
+   "class": "Transactions/TMarkQuestAsViewed.as",
+   "args": [
+    "m_questName"
+   ]
+  }
+ ],
+ "MessageService.markSeenMessages": [
+  {
+   "class": "Transactions/TMarkSeenMessages.as",
+   "args": [
+    "this.m_messageIds"
+   ]
+  }
+ ],
+ "SocialActionsService.markSeenActions": [
+  {
+   "class": "Transactions/TMarkSeenSocialActions.as",
+   "args": [
+    "this.m_socialActionIds"
+   ]
+  }
+ ],
+ "MutualFriendsService.findMutualFriends": [
+  {
+   "class": "Transactions/TMutualFriends.as",
+   "args": [
+    "String(this.m_neighbor.uid)",
+    "W2W_FEATURE_NAME",
+    "W2W_FEED_NAME"
+   ]
+  }
+ ],
+ "NeighborPlumbingService.seenFriend": [
+  {
+   "class": "Transactions/TNeighborPlumbingSeenFriend.as",
+   "args": [
+    "this.m_friendUid",
+    "this.m_shouldAddToPending"
+   ]
+  }
+ ],
+ "NPCService.performNPCAction": [
+  {
+   "class": "Transactions/TPerformNPCAction.as",
+   "args": [
+    "this.m_npc",
+    "this.m_aid"
+   ]
+  }
+ ],
+ "UserService.postInit": [
+  {
+   "class": "Transactions/TPostInit.as",
+   "args": []
+  }
+ ],
+ "MessageService.addMessage": [
+  {
+   "class": "Transactions/TPostMessage.as",
+   "args": [
+    "this.m_message.getMessage()",
+    "this.m_recipientId.toString()",
+    "this.m_replyMessageId"
+   ]
+  }
+ ],
+ "PphActionService.takeActionForTodaysAction": [
+  {
+   "class": "Transactions/TPphToDoTakeAction.as",
+   "args": []
+  }
+ ],
+ "PromoService.setShownPromotionPrompt": [
+  {
+   "class": "Transactions/TPromotion.as",
+   "args": [
+    "PromoIdleTask.activePromoSettings.@promoName.toString()",
+    "this.m_accepted"
+   ]
+  }
+ ],
+ "UserService.setPublishPermission": [
+  {
+   "class": "Transactions/TPublishPermission.as",
+   "args": []
+  }
+ ],
+ "PurchaseUnwitherService.purchaseUnwitherItem": [
+  {
+   "class": "Transactions/TPurchaseUnwither.as",
+   "args": [
+    "this.m_unwitherPrice",
+    "neighborId"
+   ]
+  }
+ ],
+ "UserService.r2InterstitialPostInit": [
+  {
+   "class": "Transactions/TR2InterstitialPostInit.as",
+   "args": []
+  }
+ ],
+ "RareBabyService.buyMysteryBaby": [
+  {
+   "class": "Transactions/TRareBaby.as",
+   "args": [
+    "this.m_babyType"
+   ]
+  }
+ ],
+ "PresentService.receiveAllPresents": [
+  {
+   "class": "Transactions/TReceiveAllPresents.as",
+   "args": []
+  }
+ ],
+ "PresentService.receivePresent": [
+  {
+   "class": "Transactions/TReceivePresent.as",
+   "args": []
+  }
+ ],
+ "ZAPIClientService.receiveWelcomeGift": [
+  {
+   "class": "Transactions/TReceiveWelcomeGift.as",
+   "args": []
+  }
+ ],
+ "CraftingService.onReconfigureStall": [
+  {
+   "class": "Transactions/TReconfigureMarketStall.as",
+   "args": [
+    "this.m_MarketStallId",
+    "this.m_BushelItemCode"
+   ]
+  }
+ ],
+ "RewardCardsService.redeemItem": [
+  {
+   "class": "Transactions/TRedeemRewardCardsItem.as",
+   "args": [
+    "this.m_redeemItem"
+   ]
+  }
+ ],
+ "UserService.getBalance": [
+  {
+   "class": "Transactions/TRefreshBalance.as",
+   "args": []
+  }
+ ],
+ "BuyerPromoService.": [
+  {
+   "class": "Transactions/TRefreshBuyerPromo.as",
+   "args": [
+    "+ SERVER_METHOD"
+   ]
+  }
+ ],
+ "UserService.": [
+  {
+   "class": "Transactions/TRefreshGifts.as",
+   "args": [
+    "+ SERVER_METHOD"
+   ]
+  },
+  {
+   "class": "Transactions/TResetSeenFlag.as",
+   "args": [
+    "+ METHOD_SET_SEEN_FLAG",
+    "this.m_flagName"
+   ]
+  },
+  {
+   "class": "Transactions/TSetSeenFlag.as",
+   "args": [
+    "+ METHOD_SET_SEEN_FLAG",
+    "this.m_flagName"
+   ]
+  },
+  {
+   "class": "Transactions/TWorldScoreLevelUp.as",
+   "args": [
+    "+ METHOD_UPDATE_WORLD_SCORE_LEVEL_UP",
+    "this.m_worldScoreUnit"
+   ]
+  }
+ ],
+ "MusicPlayerService.isAuthorizedToGetMusicToken": [
+  {
+   "class": "Transactions/TRefreshMusicPlayerHudIcon.as",
+   "args": []
+  }
+ ],
+ "MessageService.removeMessage": [
+  {
+   "class": "Transactions/TRemoveMessage.as",
+   "args": [
+    "this.m_messageId",
+    "recipientIdString"
+   ]
+  }
+ ],
+ "BumperCropService.resetBumperCropFlag": [
+  {
+   "class": "Transactions/TResetBumperCrop.as",
+   "args": []
+  }
+ ],
+ "UserService.resetSystemNotifications": [
+  {
+   "class": "Transactions/TResetSystemNotifications.as",
+   "args": []
+  }
+ ],
+ "ResourceEquipmentWorldService.": [
+  {
+   "class": "Transactions/TResourceEquipmentAction.as",
+   "args": [
+    "+ METHOD_USE_EQUIPMENT",
+    "this.m_action",
+    "this.m_equipmentBundle",
+    "this.m_resourceBundle"
+   ]
+  }
+ ],
+ "ZAPIClientService.revokeEmailPermission": [
+  {
+   "class": "Transactions/TRevokeEmailPermission.as",
+   "args": []
+  }
+ ],
+ "AvatarService.saveAvatar": [
+  {
+   "class": "Transactions/TSaveAvatar.as",
+   "args": [
+    "this.m_params",
+    "this.m_gender"
+   ]
+  }
+ ],
+ "UserService.saveFeatureOptions": [
+  {
+   "class": "Transactions/TSaveFeatureOptions.as",
+   "args": [
+    "this.m_options"
+   ]
+  }
+ ],
+ "FarmService.saveIcons": [
+  {
+   "class": "Transactions/TSaveIcons.as",
+   "args": [
+    "this.m_iconsData"
+   ]
+  }
+ ],
+ "UserService.saveOptions": [
+  {
+   "class": "Transactions/TSaveOptions.as",
+   "args": [
+    "this.m_options"
+   ]
+  }
+ ],
+ "UserService.savePromoReloadIndexes": [
+  {
+   "class": "Transactions/TSavePromoReloadIndexes.as",
+   "args": [
+    "this.m_promoIndexes"
+   ]
+  }
+ ],
+ "UserService.sawMOTD": [
+  {
+   "class": "Transactions/TSawMOTD.as",
+   "args": []
+  }
+ ],
+ "UserService.seenPubDialog": [
+  {
+   "class": "Transactions/TSawPubDialog.as",
+   "args": []
+  }
+ ],
+ "UserService.sawSpecificMOTD": [
+  {
+   "class": "Transactions/TSawSpecificMOTD.as",
+   "args": [
+    "m_currentMOTD.motdSeenFlag",
+    "this.m_grant"
+   ]
+  }
+ ],
+ "UserService.setSeenExpandFarm": [
+  {
+   "class": "Transactions/TSeenExpandFarm.as",
+   "args": [
+    "this.m_amount"
+   ]
+  }
+ ],
+ "ZAPIClientService.userHasSeenEmailPermissionPrompt": [
+  {
+   "class": "Transactions/TSeenRequestEmail.as",
+   "args": []
+  }
+ ],
+ "ZAPIClientService.userHasSeenRevampEmailPrompt": [
+  {
+   "class": "Transactions/TSeenRevampEmail.as",
+   "args": []
+  }
+ ],
+ "ZAPIClientService.userHasSeenRevampEmailPromptLockedbox": [
+  {
+   "class": "Transactions/TSeenRevampLockedboxEmail.as",
+   "args": []
+  }
+ ],
+ "ZAPIClientService.userHasSeenRevampEmailPromptProxy": [
+  {
+   "class": "Transactions/TSeenRevampProxyEmail.as",
+   "args": []
+  }
+ ],
+ "UserService.sellStorageBuildingItem": [
+  {
+   "class": "Transactions/TSellStorageBuidingItem.as",
+   "args": [
+    "this.m_itemData",
+    "this.m_sellAll",
+    "this.m_origin",
+    "this.m_sellQty",
+    "this.m_buildingId",
+    "this.m_itemMetadataHash"
+   ]
+  }
+ ],
+ "UserService.sellStoredItem": [
+  {
+   "class": "Transactions/TSellStoredItem.as",
+   "args": [
+    "this.m_giftData",
+    "this.m_sellAll",
+    "this.m_origin",
+    "this.m_sellQty"
+   ]
+  }
+ ],
+ "FBRequestService.sendAskCreditsRequest": [
+  {
+   "class": "Transactions/TSendAskCreditsRequest.as",
+   "args": [
+    "this.m_itemName",
+    "this.m_featureName",
+    "this.m_requestIds",
+    "this.m_source",
+    "this.m_expansion",
+    "this.m_view",
+    "this.m_serverTime"
+   ]
+  }
+ ],
+ "FBRequestService.sendAskItemsRequest": [
+  {
+   "class": "Transactions/TSendAskItemsRequest.as",
+   "args": [
+    "this.m_itemName",
+    "this.m_featureName",
+    "this.m_requestIds",
+    "this.m_source",
+    "this.m_expansion",
+    "this.m_view",
+    "this.m_serverTime"
+   ]
+  }
+ ],
+ "FBRequestService.sendAskMatsRequest": [
+  {
+   "class": "Transactions/TSendAskMatsRequest.as",
+   "args": [
+    "this.m_itemName",
+    "this.m_featureName",
+    "this.m_requestIds",
+    "this.m_source",
+    "this.m_expansion",
+    "this.m_view",
+    "this.m_serverTime"
+   ]
+  }
+ ],
+ "ZAPIClientService.sendEmailPasscode": [
+  {
+   "class": "Transactions/TSendEmailPasscode.as",
+   "args": [
+    "this.m_itemName"
+   ]
+  }
+ ],
+ "UserService.postFeedInterstitialFeed": [
+  {
+   "class": "Transactions/TSendFeedInterstitialFeed.as",
+   "args": [
+    "this.m_itemCode",
+    "this.m_mfsType"
+   ]
+  }
+ ],
+ "FBRequestService.sendFriendSetRequest": [
+  {
+   "class": "Transactions/TSendFriendSetRequest.as",
+   "args": [
+    "this.m_itemName",
+    "this.m_featureName",
+    "this.m_friendSetCode",
+    "this.m_currentFriendSet",
+    "this.m_requestIds",
+    "this.m_source",
+    "this.m_serverTime"
+   ]
+  }
+ ],
+ "FarmExpressZMCService.sendGiftsFromFlash": [
+  {
+   "class": "Transactions/TSendRequest2Gifts.as",
+   "args": [
+    "this.m_giftCode",
+    "this.m_requestIds",
+    "this.m_ref",
+    "this.m_source",
+    "this.m_serverTime"
+   ]
+  }
+ ],
+ "FBRequestService.sendInviteRequest": [
+  {
+   "class": "Transactions/TSendRequest2NeighborInvite.as",
+   "args": [
+    "this.m_requestIds",
+    "this.m_timeStamp",
+    "this.m_source",
+    "this.m_ref"
+   ]
+  }
+ ],
+ "FBRequestService.sendRequestGiftsRequest": [
+  {
+   "class": "Transactions/TSendRequest2RequestGifts.as",
+   "args": [
+    "this.m_itemName",
+    "this.m_featureName",
+    "this.m_requestIds",
+    "this.m_source",
+    "this.m_expansion",
+    "this.m_view",
+    "this.m_serverTime"
+   ]
+  }
+ ],
+ "JsBusterService.sendUserEnvReport": [
+  {
+   "class": "Transactions/TSendUserEnvReport.as",
+   "args": [
+    "this.m_reportData"
+   ]
+  }
+ ],
+ "CraftingService.onSetCraftedGoodPrice": [
+  {
+   "class": "Transactions/TSetCraftedGoodPrice.as",
+   "args": [
+    "this.m_craftingCottageBuildingId",
+    "this.m_productCode",
+    "this.m_newPrice"
+   ]
+  }
+ ],
+ "ZAPIClientService.setEmailPref": [
+  {
+   "class": "Transactions/TSetEmailPref.as",
+   "args": [
+    "this.m_email",
+    "this.m_permission"
+   ]
+  }
+ ],
+ "UserService.updateFeatureFrequencyTimestamp": [
+  {
+   "class": "Transactions/TSetFeatureFrequencyTimestamp.as",
+   "args": [
+    "this.m_featureName"
+   ]
+  }
+ ],
+ "UserService.updateFeatureFrequencyWithBackoff": [
+  {
+   "class": "Transactions/TSetFeatureFrequencyWithBackoff.as",
+   "args": [
+    "m_featureName",
+    "this.m_maxBackoffIncrements"
+   ]
+  }
+ ],
+ "FeedIdService.setFeedId": [
+  {
+   "class": "Transactions/TSetFeedId.as",
+   "args": [
+    "this.m_localFeedId",
+    "this.m_snFeedId"
+   ]
+  }
+ ],
+ "ItemFriendSetService.setFriendSetProgress": [
+  {
+   "class": "Transactions/TSetFriendSetProgress.as",
+   "args": [
+    "this.m_friendSetCode",
+    "this.m_gameId"
+   ]
+  }
+ ],
+ "WallToWallFeatureService.setFriendSetSeen": [
+  {
+   "class": "Transactions/TSetFriendSetSeen.as",
+   "args": [
+    "this.m_code"
+   ]
+  }
+ ],
+ "UserService.setItemFlag": [
+  {
+   "class": "Transactions/TSetItemFlag.as",
+   "args": [
+    "this.m_attrName",
+    "this.m_attrValue"
+   ]
+  }
+ ],
+ "SNPermissionsService.setSNExtendedPermissions": [
+  {
+   "class": "Transactions/TSetSNExtendedPermissions.as",
+   "args": [
+    "this.m_permissions"
+   ]
+  }
+ ],
+ "TerrainService.setTerrainMapping": [
+  {
+   "class": "Transactions/TSetTerrainMapping.as",
+   "args": [
+    "this.m_terrainPoints"
+   ]
+  }
+ ],
+ "FlashGiftService.shareFlashGiftFeed": [
+  {
+   "class": "Transactions/TShareFlashGiftFeed.as",
+   "args": [
+    "this.m_item.name"
+   ]
+  }
+ ],
+ "UserService.giftStoredGiftBoxItems": [
+  {
+   "class": "Transactions/TShareRegiftItem.as",
+   "args": [
+    "this.m_itemCode",
+    "this.m_quantity"
+   ]
+  }
+ ],
+ "FriendSetService.startFriendSetTimer": [
+  {
+   "class": "Transactions/TStartFriendSetTimer.as",
+   "args": [
+    "this.m_friendSetCode"
+   ]
+  }
+ ],
+ "CrossPromoService.startOutBoundPromo": [
+  {
+   "class": "Transactions/TStartOutBoundPromo.as",
+   "args": [
+    "this.m_promoId"
+   ]
+  }
+ ],
+ "UserService.subscribeToEmail": [
+  {
+   "class": "Transactions/TSubscribeToEmail.as",
+   "args": [
+    "this.m_emailChannel"
+   ]
+  }
+ ],
+ "StatsPassService.onSurpassedFriendStat": [
+  {
+   "class": "Transactions/TSurpassFriendStat.as",
+   "args": [
+    "this.m_statObject.statType",
+    "this.m_statObject.statSubType",
+    "this.m_statObject.friendID.toString()",
+    "this.m_backendVerified"
+   ]
+  }
+ ],
+ "FarmService.takePhoto": [
+  {
+   "class": "Transactions/TTakePhoto.as",
+   "args": [
+    "this.m_userid"
+   ]
+  }
+ ],
+ "FriendService.getGiftingFriends": [
+  {
+   "class": "Transactions/TTopFriends.as",
+   "args": [
+    "DEFAULT_NUM_FRIENDS",
+    "this.m_featureName"
+   ]
+  }
+ ],
+ "PigPenService.onTradePigSlop": [
+  {
+   "class": "Transactions/TTradePigSlop.as",
+   "args": []
+  }
+ ],
+ "TradingGoodService.onBuyGood": [
+  {
+   "class": "Transactions/TTradingBuyGood.as",
+   "args": [
+    "\":\" + this.m_goodToBuy.sellingUid",
+    "this.m_goodToBuy.itemCode",
+    "this.m_goodToBuy.orderType"
+   ]
+  }
+ ],
+ "TradingGoodService.onOrderGood": [
+  {
+   "class": "Transactions/TTradingOrderGood.as",
+   "args": [
+    "\":\" + this.m_goodToOrder.sellingUid",
+    "this.m_goodToOrder.itemCode",
+    "this.m_goodToOrder.orderType"
+   ]
+  }
+ ],
+ "TileBundleService.buyTileBundle": [
+  {
+   "class": "Transactions/TTransformTreasureBundle.as",
+   "args": [
+    "this.m_savedObjects",
+    "this.m_bundleName"
+   ]
+  }
+ ],
+ "LandBundleService.buyLandBundle": [
+  {
+   "class": "Transactions/TTransformTreasureLandBundle.as",
+   "args": [
+    "this.m_savedObjects",
+    "this.m_bundleName"
+   ]
+  }
+ ],
+ "TrickOrTreatService.performOffBoarding": [
+  {
+   "class": "Transactions/TTrickOrTreatOffBoard.as",
+   "args": []
+  }
+ ],
+ "TrickOrTreatService.passNeighbor": [
+  {
+   "class": "Transactions/TTrickOrTreatPassNeighbor.as",
+   "args": []
+  }
+ ],
+ "TrickOrTreatService.redeemReward": [
+  {
+   "class": "Transactions/TTrickOrTreatRedeemReward.as",
+   "args": []
+  }
+ ],
+ "TrickOrTreatService.startProgress": [
+  {
+   "class": "Transactions/TTrickOrTreatStartProgress.as",
+   "args": []
+  }
+ ],
+ "TradingGoodService.getTradingGoods": [
+  {
+   "class": "Transactions/TUpdateTradingPost.as",
+   "args": []
+  }
+ ],
+ "W2WFeatureService.updateSentHistory": [
+  {
+   "class": "Transactions/TUpdateW2WSentHistory.as",
+   "args": [
+    "this.m_featureName",
+    "this.m_feedName",
+    "this.m_targetUid.toString()"
+   ]
+  }
+ ],
+ "SpecialDeliveryService.openAllRtue": [
+  {
+   "class": "Transactions/TUseAllSpecialDelivery.as",
+   "args": [
+    "this.m_quantity"
+   ]
+  }
+ ],
+ "SpecialDeliveryService.openAll": [
+  {
+   "class": "Transactions/TUseAllSpecialDelivery.as",
+   "args": [
+    "this.m_quantity"
+   ]
+  }
+ ],
+ "CraftingService.onUseCraftedGood": [
+  {
+   "class": "Transactions/TUseCraftedGood.as",
+   "args": [
+    "this.m_craftedItem.itemKey"
+   ]
+  }
+ ],
+ "UserService.setUserName": [
+  {
+   "class": "Transactions/TUserName.as",
+   "args": [
+    "this.m_userName"
+   ]
+  }
+ ],
+ "WanderingAnimalService.onCreateMustangReward": [
+  {
+   "class": "Transactions/TWanderingMustang.as",
+   "args": []
+  }
+ ],
+ "WanderingAnimalService.onBuyWanderingMustang": [
+  {
+   "class": "Transactions/TWanderingMustangBuy.as",
+   "args": [
+    "this.m_rewardId",
+    "this.m_buyReward"
+   ]
+  }
+ ],
+ "WanderingAnimalService.onWanderingMustangSendEmail": [
+  {
+   "class": "Transactions/TWanderingMustangSendEmail.as",
+   "args": [
+    "this.m_friendList",
+    "this.m_rewardId"
+   ]
+  }
+ ],
+ "WinternordInnovationService.getProgressForTask": [
+  {
+   "class": "Transactions/TWinternordCommunityGoalsGetProgress.as",
+   "args": [
+    "this.m_task.name"
+   ]
+  }
+ ],
+ "UserService.toggleWither": [
+  {
+   "class": "Transactions/TWitherOn.as",
+   "args": [
+    "this.m_itemId"
+   ]
+  }
+ ],
+ "WorldService.loadOwnWorld": [
+  {
+   "class": "Transactions/TWorldLoad.as",
+   "args": [
+    "this.m_worldType",
+    "this.m_shouldCreateWorld",
+    "this.m_shouldFreezeFarm",
+    "this.m_nextSeasonUnlock"
+   ]
+  }
+ ],
+ "WorldService.postCachedWorldLoad": [
+  {
+   "class": "Transactions/TWorldLoadAfterCache.as",
+   "args": [
+    "worldType",
+    "shouldCreateWorld",
+    "shouldFreezeFarm"
+   ]
+  }
+ ],
+ "WorldService.peekWorldResult": [
+  {
+   "class": "Transactions/TWorldPeek.as",
+   "args": [
+    "this.m_worldType"
+   ]
+  }
+ ],
+ "ChristmasCharityBundleService.congratsPopupSeen": [
+  {
+   "class": "Transactions/TXmasCharityCongratsSeen.as",
+   "args": [
+    "this.m_item.name"
+   ]
+  }
+ ],
+ "ZFeedService.shadowFeed": [
+  {
+   "class": "Transactions/TZFeed.as",
+   "args": [
+    "this.m_feedPayload"
+   ]
+  }
+ ],
+ "AnimalBreedingService.onAskForBreedingItem": [
+  {
+   "class": "Transactions/BreedingProjects/TAnimalAskForBreedItem.as",
+   "args": [
+    "this.m_itemCode"
+   ]
+  }
+ ],
+ "AnimalBreedingService.onBeginBreeding": [
+  {
+   "class": "Transactions/BreedingProjects/TAnimalBeginBreeding.as",
+   "args": [
+    "this.m_breedSession.serializeForPhp()"
+   ]
+  }
+ ],
+ "AnimalBreedingService.onTradeCollection": [
+  {
+   "class": "Transactions/BreedingProjects/TAnimalCollectionTradeIn.as",
+   "args": [
+    "this.m_parentWindow.getFeatureName()",
+    "this.m_collectionName",
+    "this.m_buildingId"
+   ]
+  }
+ ],
+ "AnimalBreedingService.onFinishBreeding": [
+  {
+   "class": "Transactions/BreedingProjects/TAnimalFinishBreeding.as",
+   "args": [
+    "this.m_breedSession.serializeForPhp()"
+   ]
+  }
+ ],
+ "AnimalBreedingService.onFinishBreedingNow": [
+  {
+   "class": "Transactions/BreedingProjects/TAnimalFinishBreedingNow.as",
+   "args": [
+    "this.m_breedSession.serializeForPhp()"
+   ]
+  }
+ ],
+ "AnimalBreedingService.onGiveUpForAdoption": [
+  {
+   "class": "Transactions/BreedingProjects/TAnimalGiveUpForAdoption.as",
+   "args": [
+    "this.m_itemCode",
+    "this.m_metadataHash"
+   ]
+  }
+ ],
+ "AnimalBreedingService.onSetAnimalName": [
+  {
+   "class": "Transactions/BreedingProjects/TAnimalSetName.as",
+   "args": [
+    "this.m_itemCode",
+    "this.m_metadataHash",
+    "this.m_name",
+    "this.m_worldId",
+    "this.m_building ? this.m_building.getSaveObject() : null"
+   ]
+  }
+ ],
+ "BreedingService.completeTutorialForProject": [
+  {
+   "class": "Transactions/BreedingProjects/TCompleteBreedingTutorial.as",
+   "args": [
+    "this.m_projectName"
+   ]
+  }
+ ],
+ "DragonBreedingService.": [
+  {
+   "class": "Transactions/BreedingProjects/TDragonBeginBreeding.as",
+   "args": [
+    "+ ACTION_ON_BEGIN_BREEDING",
+    "this.m_breedSession.serializeForPhp()"
+   ]
+  }
+ ],
+ "DragonBreedingService.onFinishBreeding": [
+  {
+   "class": "Transactions/BreedingProjects/TDragonFinishBreeding.as",
+   "args": [
+    "this.m_breedSession.serializeForPhp()"
+   ]
+  }
+ ],
+ "AnimalBreedingService.getBreedingLevelUpShareLink": [
+  {
+   "class": "Transactions/BreedingProjects/TGetBreedingLevelUpShareLink.as",
+   "args": [
+    "this.m_featureName"
+   ]
+  }
+ ],
+ "AnimalBreedingService.onPurchaseBreedingAnimal": [
+  {
+   "class": "Transactions/BreedingProjects/TPurchaseBreedingAnimal.as",
+   "args": [
+    "this.m_featureName",
+    "this.m_gender",
+    "this.m_baseColor",
+    "this.m_patternColor",
+    "this.m_patternStyle"
+   ]
+  }
+ ],
+ "AnimalBreedingService.onPurchaseBreedingLevel": [
+  {
+   "class": "Transactions/BreedingProjects/TPurchaseBreedingLevel.as",
+   "args": [
+    "this.m_featureName",
+    "this.m_targetLevel"
+   ]
+  }
+ ],
+ "DragonBreedingService.onPurchaseBreedingLevel": [
+  {
+   "class": "Transactions/BreedingProjects/TPurchaseDragonBreedingLevel.as",
+   "args": [
+    "m_featureName",
+    "m_targetLevel"
+   ]
+  }
+ ],
+ "CaptureFeatureService.onPurchaseTreat": [
+  {
+   "class": "Transactions/CaptureFeatures/TBuyCaptureFeatureTreat.as",
+   "args": [
+    "this.m_featureName"
+   ]
+  }
+ ],
+ "CaptureFeatureService.": [
+  {
+   "class": "Transactions/CaptureFeatures/TCapturedFeature.as",
+   "args": [
+    "+ this.m_serviceFunction",
+    "this.m_featureName",
+    "this.m_itemName",
+    "this.m_options"
+   ]
+  }
+ ],
+ "NeighborActionService.clearNeighborAction": [
+  {
+   "class": "Transactions/NeighborActions/TClearNeighborAction.as",
+   "args": [
+    "this.m_neighborId",
+    "this.m_actionType",
+    "this.m_objectId"
+   ]
+  }
+ ],
+ "NeighborActionService.depositAnimalFeed": [
+  {
+   "class": "Transactions/NeighborActions/TDepositNeighborAnimalFeed.as",
+   "args": [
+    "m_hostId"
+   ]
+  }
+ ],
+ "NeighborActionService.getVisitGiftW2W": [
+  {
+   "class": "Transactions/NeighborActions/TSendNeighborGift.as",
+   "args": [
+    "this.m_neighborId"
+   ]
+  }
+ ],
+ "FarmQuestService.askForQuestItem": [
+  {
+   "class": "Transactions/Quests/TAskForQuestItem.as",
+   "args": [
+    "m_questName",
+    "m_taskIndex"
+   ]
+  }
+ ],
+ "FarmQuestService.fullQuestRefresh": [
+  {
+   "class": "Transactions/Quests/TFullQuestRefresh.as",
+   "args": []
+  }
+ ],
+ "FarmQuestService.": [
+  {
+   "class": "Transactions/Quests/TIncrementGenericFarmTask.as",
+   "args": [
+    "+ METHOD_INCREMENT_TASK",
+    "this.m_action"
+   ]
+  },
+  {
+   "class": "Transactions/Quests/TSkipQuestTask.as",
+   "args": [
+    "+ METHOD_SKIP_TASK",
+    "m_questName",
+    "m_taskIndex"
+   ]
+  }
+ ],
+ "FarmQuestService.userKillQuest": [
+  {
+   "class": "Transactions/Quests/TKillQuest.as",
+   "args": [
+    "m_questName"
+   ]
+  }
+ ],
+ "FarmQuestService.userPauseQuest": [
+  {
+   "class": "Transactions/Quests/TPauseQuest.as",
+   "args": [
+    "m_questName"
+   ]
+  }
+ ],
+ "FarmQuestService.recordQuestItemRequest": [
+  {
+   "class": "Transactions/Quests/TRecordQuestItemRequest.as",
+   "args": [
+    "m_questName",
+    "m_taskIndex",
+    "this.m_timeRequestedAt"
+   ]
+  }
+ ],
+ "FarmQuestService.userResetQuestChapter": [
+  {
+   "class": "Transactions/Quests/TReplayQuestChapter.as",
+   "args": [
+    "m_questName"
+   ]
+  }
+ ],
+ "FarmQuestService.updateRecentlyCompletedQuests": [
+  {
+   "class": "Transactions/Quests/TShareQuestLoot.as",
+   "args": [
+    "m_questName",
+    "this.m_shouldGenerateFriendReward"
+   ]
+  }
+ ],
+ "UserService.updateRecentlyCompletedWorldScoreLevel": [
+  {
+   "class": "Transactions/Quests/TShareWorldScoreLevelUpReward.as",
+   "args": [
+    "this.m_scoreUnit",
+    "this.m_scoreLevel",
+    "this.m_shouldGenerateFriendReward"
+   ]
+  }
+ ],
+ "FarmQuestService.skipConstructionBuildingTask": [
+  {
+   "class": "Transactions/Quests/TSkipBuildingConstruction.as",
+   "args": [
+    "m_questName",
+    "m_taskIndex"
+   ]
+  }
+ ],
+ "FarmQuestService.skipCompleteFriendSetTask": [
+  {
+   "class": "Transactions/Quests/TSkipCompleteFriendSetTask.as",
+   "args": [
+    "m_questName",
+    "m_taskIndex"
+   ]
+  }
+ ],
+ "FarmQuestService.skipExpandStorageBuildingTask": [
+  {
+   "class": "Transactions/Quests/TSkipExpandStorageBuilding.as",
+   "args": [
+    "m_questName",
+    "m_taskIndex"
+   ]
+  }
+ ],
+ "FarmQuestService.skipGetBushelsTask": [
+  {
+   "class": "Transactions/Quests/TSkipGetBushels.as",
+   "args": [
+    "m_questName",
+    "m_taskIndex"
+   ]
+  }
+ ],
+ "FarmQuestService.skipRewardCreditsTask": [
+  {
+   "class": "Transactions/Quests/TSkipRewardCreditTask.as",
+   "args": [
+    "m_questName",
+    "m_taskIndex"
+   ]
+  }
+ ],
+ "FarmQuestService.markViewDialogTaskDone": [
+  {
+   "class": "Transactions/Quests/TUserTaskSeen.as",
+   "args": [
+    "m_questName"
+   ]
+  }
+ ],
+ "RaffleService.buyTickets": [
+  {
+   "class": "Transactions/SocialRaffle/TBuyRaffleTickets.as",
+   "args": [
+    "this.m_numTickets"
+   ]
+  }
+ ],
+ "RaffleService.finishRewardFlow": [
+  {
+   "class": "Transactions/SocialRaffle/TFinishRewardFlow.as",
+   "args": []
+  }
+ ],
+ "RaffleService.getRaffleData": [
+  {
+   "class": "Transactions/SocialRaffle/TGetRaffleData.as",
+   "args": []
+  }
+ ],
+ "RaffleService.grantReward": [
+  {
+   "class": "Transactions/SocialRaffle/TGrantRaffleReward.as",
+   "args": [
+    "this.m_raffleIndex"
+   ]
+  }
+ ],
+ "RaffleService.setSeenRaffleHelpers": [
+  {
+   "class": "Transactions/SocialRaffle/TSetSeenRaffleHelpers.as",
+   "args": []
+  }
+ ],
+ "VotingService.onRedeemFinalPrize": [
+  {
+   "class": "Transactions/Voting/TAwardVotePrize.as",
+   "args": [
+    "this.m_featureName"
+   ]
+  }
+ ],
+ "VotingService.onBuyPostVoteItem": [
+  {
+   "class": "Transactions/Voting/TBuyVoteItem.as",
+   "args": [
+    "this.m_featureName",
+    "this.m_voteItemName",
+    "this.m_expectedPrice"
+   ]
+  }
+ ],
+ "VotingService.onBuyVoteItem": [
+  {
+   "class": "Transactions/Voting/TBuyVoteItem.as",
+   "args": [
+    "this.m_featureName",
+    "this.m_voteItemName",
+    "this.m_expectedPrice"
+   ]
+  }
+ ],
+ "VotingService.onRedeemVoteItem": [
+  {
+   "class": "Transactions/Voting/TRedeemVoteItem.as",
+   "args": [
+    "this.m_featureName",
+    "this.m_redeemItemIdentifier",
+    "this.m_voteIndex"
+   ]
+  }
+ ]
+}

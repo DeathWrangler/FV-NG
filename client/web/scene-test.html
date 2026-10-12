@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FV-NG — SWF Scene Renderer</title>
+<style>
+  :root { --bg:#0e1a12; --ink:#e8f3ea; --mut:#8fae97; --accent:#7ed957; }
+  html,body { margin:0; height:100%; background:var(--bg); color:var(--ink);
+    font:13px/1.4 system-ui,-apple-system,Segoe UI,Roboto,sans-serif; overflow:hidden; }
+  #stage { position:absolute; inset:0; display:block; }
+  #bar { position:absolute; top:12px; left:12px; z-index:5; display:flex; gap:14px; align-items:center;
+    background:linear-gradient(180deg,#1d3024,#16241b); border:1px solid #2c4636; border-radius:12px;
+    padding:10px 14px; box-shadow:0 6px 24px rgba(0,0,0,.45); }
+  #bar label { color:var(--mut); text-transform:uppercase; font-size:10px; letter-spacing:.08em; }
+  select,input[type=range] { background:#0f1c14; color:var(--ink); border:1px solid #3d5c49; border-radius:6px; padding:3px 6px; }
+  #meta { position:absolute; bottom:12px; left:12px; z-index:5; color:var(--mut); font-family:ui-monospace,Consolas,monospace; font-size:11px; white-space:pre; }
+  #err { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; color:#ff9a9a; font-size:15px; text-align:center; padding:30px; }
+</style>
+</head>
+<body>
+<canvas id="stage"></canvas>
+<div id="bar">
+  <div><label>Scene</label> <span id="scenename">–</span></div>
+  <div><label>Symbol</label> <select id="symbol"></select></div>
+  <div><label>Frame</label> <input type="range" id="frame" min="0" max="0" value="0"> <span id="framelbl">0/0</span></div>
+  <div><label>Fit</label> <button id="fit">fit</button></div>
+  <div><label>Play</label> <button id="play">▶</button></div>
+  <div><label>Button</label> <span id="btnstate">–</span></div>
+</div>
+<div id="meta">loading…</div>
+<script src="scene2d.js"></script>
+<script src="fvstage.js"></script>
+<script>
+(function () {
+  'use strict';
+  const params = new URLSearchParams(location.search);
+  const sceneUrl = params.get('scene') || 'scenes/trellis.scene.json';
+  const useStage = params.get('stage') === '1';
+  const reps = Math.max(1, parseInt(params.get('reps') || '1', 10));
+  let stage = null;
+  const canvas = document.getElementById('stage');
+  const ctx = canvas.getContext('2d');
+  const metaEl = document.getElementById('meta');
+  let scene = null, frame = 0, scale = 1, offX = 0, offY = 0, symbol = '';
+  let playing = false, playT0 = 0, rafId = 0;
+  let pressed = false;
+
+  function resize() {
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    canvas.width = innerWidth * dpr; canvas.height = innerHeight * dpr;
+    canvas.style.width = innerWidth + 'px'; canvas.style.height = innerHeight + 'px';
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+  addEventListener('resize', () => { resize(); fit(); draw(); });
+
+  function fit() {
+    if (!scene) return;
+    const b = scene.measure(frame, symbol);
+    const pad = 60;
+    scale = Math.min((innerWidth - pad * 2) / b.w, (innerHeight - pad * 2) / b.h);
+    scale = Math.max(0.05, Math.min(12, scale));
+    offX = (innerWidth - b.w * scale) / 2 - b.x * scale;
+    offY = (innerHeight - b.h * scale) / 2 - b.y * scale;
+  }
+
+  function draw(timeMs) {
+    ctx.clearRect(0, 0, innerWidth, innerHeight);
+    // checkerboard
+    const s = 16;
+    for (let y = 0; y < innerHeight; y += s) for (let x = 0; x < innerWidth; x += s) {
+      ctx.fillStyle = ((x / s + y / s) % 2) ? '#12241a' : '#0e1a12';
+      ctx.fillRect(x, y, s, s);
+    }
+    ctx.save();
+    ctx.translate(offX, offY); ctx.scale(scale, scale);
+    for (let r = 0; r < reps; r++) {
+      if (useStage && stage) stage.render(ctx);
+      else if (timeMs != null) scene.renderAt(ctx, timeMs);
+      else if (symbol) scene.renderSymbol(ctx, symbol, [1, 0, 0, 1, 0, 0]);
+      else scene.render(ctx, frame);
+    }
+    ctx.restore();
+  }
+
+  function playLoop() {
+    if (!playing) return;
+    const t = performance.now() - playT0;
+    draw(t);
+    rafId = requestAnimationFrame(playLoop);
+  }
+  function togglePlay() {
+    playing = !playing;
+    document.getElementById('play').textContent = playing ? '❚❚' : '▶';
+    if (playing) { symbol = ''; document.getElementById('symbol').value = '__root__'; fit(); playT0 = performance.now(); playLoop(); }
+    else { cancelAnimationFrame(rafId); draw(); }
+  }
+
+  // ---- button interactivity (AVM2 button states) ----
+  function sceneCoords(e) { return { x: (e.clientX - offX) / scale, y: (e.clientY - offY) / scale }; }
+  function hitButton(e) {
+    if (!scene || playing) return false;
+    const p = sceneCoords(e);
+    return scene.buttonBoxes(frame, symbol).some(b => p.x >= b.x0 && p.x <= b.x1 && p.y >= b.y0 && p.y <= b.y1);
+  }
+  function updateButtonState(e, down) {
+    if (!scene) return;
+    const hit = hitButton(e);
+    const st = hit ? ((down || pressed) ? 'down' : 'over') : 'up';
+    document.getElementById('btnstate').textContent = hit ? st : '–';
+    if (scene._buttonState !== st) { scene._buttonState = st; draw(); }
+  }
+
+  function update() {
+    if (!scene) return;
+    if (playing) { playing = false; document.getElementById('play').textContent = '▶'; cancelAnimationFrame(rafId); }
+    const sym = document.getElementById('symbol').value;
+    symbol = sym === '__root__' ? '' : sym;
+    document.getElementById('framelbl').textContent = frame + '/' + (scene.frameCount() - 1);
+    metaEl.textContent = 'scene: ' + sceneUrl + '\nchars: ' + Object.keys(scene.characters).length +
+      '  symbols: ' + scene.symbols().length + '  frames: ' + scene.frameCount() +
+      '  bounds: ' + JSON.stringify({ x: +scene.bounds.x.toFixed(0), y: +scene.bounds.y.toFixed(0), w: +scene.bounds.w.toFixed(0), h: +scene.bounds.h.toFixed(0) });
+    fit();
+    draw();
+  }
+
+  (async () => {
+    resize();
+    try {
+      const raw = await (await fetch(sceneUrl)).json();
+      scene = new FVScene(raw);
+      await scene.load();
+      if (useStage) {
+        stage = new FVStage(scene); stage.instantiate(0);
+        for (const s of params.getAll('set')) {                       // e.g. ?set=slot_0_mc.title_tf=Hello
+          const i = s.indexOf('='); if (i < 0) continue;
+          const path = s.slice(0, i).split('.'), val = s.slice(i + 1);
+          let n = stage.find(path[0]); for (let k = 1; k < path.length && n; k++) n = n.child(path[k]);
+          if (n) n.setText(val);
+        }
+      }
+      document.getElementById('scenename').textContent = (raw.meta && raw.meta.source) || sceneUrl;
+      const sel = document.getElementById('symbol');
+      sel.innerHTML = '<option value="__root__">(root timeline)</option>' +
+        scene.symbols().map(s => '<option value="' + s + '">' + s + '</option>').join('');
+      // if the root timeline is empty (asset is a symbol library), default to the first symbol
+      if (scene.frames[0] && scene.frames[0].length === 0 && scene.symbols().length) {
+        sel.value = scene.symbols()[0];
+      }
+      const fr = document.getElementById('frame');
+      fr.max = Math.max(0, scene.frameCount() - 1);
+      const qf = parseInt(params.get('frame') || '0', 10);
+      if (qf > 0) { frame = Math.min(qf, scene.frameCount() - 1); fr.value = frame; }
+      const bs = params.get('btnstate');
+      if (bs) { scene._buttonState = bs; document.getElementById('btnstate').textContent = bs; }
+      fr.addEventListener('input', () => { frame = +fr.value; update(); });
+      sel.addEventListener('change', update);
+      document.getElementById('fit').addEventListener('click', () => { fit(); update(); });
+      document.getElementById('play').addEventListener('click', togglePlay);
+      canvas.addEventListener('mousemove', e => updateButtonState(e, false));
+      canvas.addEventListener('mousedown', e => { pressed = hitButton(e); updateButtonState(e, true); });
+      window.addEventListener('mouseup', e => { pressed = false; updateButtonState(e, false); });
+      fit(); update();
+    } catch (e) {
+      document.getElementById('err') ? null : null;
+      const d = document.createElement('div'); d.id = 'err'; d.textContent = 'Failed to load scene: ' + e.message; document.body.appendChild(d);
+    }
+  })();
+})();
+</script>
+</body>
+</html>

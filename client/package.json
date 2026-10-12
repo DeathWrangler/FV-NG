@@ -1,0 +1,15 @@
+{
+  "name": "fv-ng-client",
+  "version": "0.1.0",
+  "private": true,
+  "description": "FV-NG native Farmville client — AMF3 net layer, SWF scene renderer, regression harness.",
+  "scripts": {
+    "test": "node net/run_tests.js",
+    "test:live": "node net/run_tests.js --live",
+    "test:record": "node net/run_tests.js --record",
+    "test:scene": "node tools/test_scene.js",
+    "test:editor": "node editor/editor_test.js",
+    "test:editor:e2e": "node editor/e2e_test.js",
+    "test:all": "node net/run_tests.js && node tools/test_scene.js"
+  }
+}

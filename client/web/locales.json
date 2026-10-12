@@ -1,0 +1,50 @@
+{
+  "en": {
+    "subtitle": "Farmville · native client",
+    "gold": "Gold", "cash": "Cash", "energy": "Energy", "level": "Level",
+    "place": "Place", "sound": "Sound", "shop": "Shop", "market": "Market",
+    "server_time": "Server time", "world": "World",
+    "search": "search items…", "all": "all",
+    "hint": "drag · pan · wheel · zoom\nclick empty ground · new plot\nplow → plant → harvest"
+  },
+  "de_DE": {
+    "subtitle": "Farmville · nativer Client",
+    "gold": "Gold", "cash": "Cash", "energy": "Energie", "level": "Stufe",
+    "place": "Platzieren", "sound": "Ton", "shop": "Shop", "market": "Markt",
+    "server_time": "Serverzeit", "world": "Welt",
+    "search": "Artikel suchen…", "all": "alle",
+    "hint": "ziehen · schwenken · Rad · zoomen\nleeren Boden klicken · neues Feld\npflügen → pflanzen → ernten"
+  },
+  "es_ES": {
+    "subtitle": "Farmville · cliente nativo",
+    "gold": "Oro", "cash": "Efectivo", "energy": "Energía", "level": "Nivel",
+    "place": "Colocar", "sound": "Sonido", "shop": "Tienda", "market": "Mercado",
+    "server_time": "Hora del servidor", "world": "Mundo",
+    "search": "buscar artículos…", "all": "todos",
+    "hint": "arrastrar · mover · rueda · zoom\nclic en el suelo · nuevo terreno\narar → plantar → cosechar"
+  },
+  "fr_FR": {
+    "subtitle": "Farmville · client natif",
+    "gold": "Or", "cash": "Espèces", "energy": "Énergie", "level": "Niveau",
+    "place": "Placer", "sound": "Son", "shop": "Boutique", "market": "Marché",
+    "server_time": "Heure serveur", "world": "Monde",
+    "search": "rechercher des articles…", "all": "tous",
+    "hint": "glisser · déplacer · molette · zoom\ncliquez sur le sol · nouvelle parcelle\nlabourer → planter → récolter"
+  },
+  "it_IT": {
+    "subtitle": "Farmville · client nativo",
+    "gold": "Oro", "cash": "Contanti", "energy": "Energia", "level": "Livello",
+    "place": "Posiziona", "sound": "Audio", "shop": "Negozio", "market": "Mercato",
+    "server_time": "Ora del server", "world": "Mondo",
+    "search": "cerca oggetti…", "all": "tutti",
+    "hint": "trascina · sposta · rotella · zoom\nclicca il terreno · nuovo appezzamento\narare → piantare → raccogliere"
+  },
+  "pt_BR": {
+    "subtitle": "Farmville · cliente nativo",
+    "gold": "Ouro", "cash": "Dinheiro", "energy": "Energia", "level": "Nível",
+    "place": "Colocar", "sound": "Som", "shop": "Loja", "market": "Mercado",
+    "server_time": "Hora do servidor", "world": "Mundo",
+    "search": "buscar itens…", "all": "todos",
+    "hint": "arrastar · mover · roda · zoom\nclique no chão · novo canteiro\narar → plantar → colher"
+  }
+}

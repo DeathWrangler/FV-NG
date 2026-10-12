@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FV-NG UI Editor</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header id="topbar">
+  <div class="brand">FV-NG <span class="sub">UI / Menu / Overlay Editor</span></div>
+  <div class="searchwrap">
+    <input id="search" type="search" placeholder="Search dialogs, menus, overlays… (name or asset)" autocomplete="off">
+  </div>
+  <div class="topactions">
+    <button id="btnReport" title="Verification report: buttons vs mapped handlers">Report</button>
+    <button id="btnExport" title="Download dispatch.json (asset -> stems + per-instance handler map)">Export dispatch</button>
+    <span id="status" class="status"></span>
+  </div>
+</header>
+
+<div id="main">
+  <!-- LEFT: manifest / asset list -->
+  <aside id="left">
+    <div class="panel-head">
+      <span>Assets</span>
+      <label class="chk"><input type="checkbox" id="onlyMapped" checked> mapped only</label>
+    </div>
+    <div id="assetList" class="list"></div>
+  </aside>
+
+  <!-- CENTER: canvas -->
+  <section id="center">
+    <div id="canvasWrap">
+      <canvas id="cv"></canvas>
+      <div id="stagebar">
+        <button data-zoom="fit" title="Fit to view">⤢ Fit</button>
+        <button data-zoom="in"  title="Zoom in">＋</button>
+        <button data-zoom="out" title="Zoom out">－</button>
+        <span id="zoomLabel" class="zlabel">100%</span>
+        <span id="stageName" class="sname"></span>
+      </div>
+      <div id="hintbar">Click to pick an element · hover highlights buttons · scroll to zoom · drag empty space to pan</div>
+    </div>
+  </section>
+
+  <!-- RIGHT: inspector -->
+  <aside id="right">
+    <div class="panel-head"><span>Inspector</span></div>
+    <div id="inspector" class="list">
+      <div class="empty">Pick an element on the canvas, or choose an asset on the left.</div>
+    </div>
+  </aside>
+</div>
+
+<!-- REPORT MODAL -->
+<div id="reportModal" class="modal hidden">
+  <div class="modal-card">
+    <div class="modal-head"><span>Verification Report</span><button id="closeReport" class="x">✕</button></div>
+    <div id="reportBody" class="modal-body"></div>
+  </div>
+</div>
+
+<script src="/lib/scene2d.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

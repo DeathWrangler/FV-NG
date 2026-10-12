@@ -1,0 +1,16 @@
+package Classes
+{
+   import mx.core.ByteArrayAsset;
+   
+   [ExcludeClass]
+   [Embed(source="/_assets/555.bin", mimeType="application/octet-stream")]
+   public class EmbeddedArt_cursor_plow_PPH_limit_terrace_asia_dataClass extends ByteArrayAsset
+   {
+      
+      public function EmbeddedArt_cursor_plow_PPH_limit_terrace_asia_dataClass()
+      {
+         super();
+      }
+   }
+}
+

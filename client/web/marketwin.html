@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FV-NG — MarketWindow (Zw port)</title>
+<style>
+  html,body { margin:0; height:100%; background:#0e1a12; overflow:hidden; }
+  #stage { position:absolute; inset:0; display:block; }
+  #meta { position:absolute; bottom:10px; left:12px; z-index:5; color:#8fae97; font:11px ui-monospace,Consolas,monospace; white-space:pre; }
+  #err { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; color:#ff9a9a; font:15px system-ui; padding:30px; text-align:center; }
+</style>
+</head>
+<body>
+<canvas id="stage"></canvas>
+<div id="meta">loading…</div>
+<script src="scene2d.js?b=9"></script>
+<script src="fvstage.js?b=9"></script>
+<script src="zw.js?b=9"></script>
+<script src="marketwindow.js?b=9"></script>
+<script>
+(function () {
+  'use strict';
+  const params = new URLSearchParams(location.search);
+  const canvas = document.getElementById('stage'), ctx = canvas.getContext('2d');
+  const metaEl = document.getElementById('meta');
+  const BUILD = params.get('v') || '13';
+  const STOP = parseInt(params.get('stop') || '0', 10);
+  let frames = 0;
+  let win = null, dpr = Math.min(window.devicePixelRatio || 1, 2);
+  const cache = {}; let scenesByName = {};
+
+  function resize() { dpr = Math.min(window.devicePixelRatio || 1, 2); canvas.width = innerWidth * dpr; canvas.height = innerHeight * dpr; canvas.style.width = innerWidth + 'px'; canvas.style.height = innerHeight + 'px'; }
+  addEventListener('resize', () => { resize(); draw(); });
+
+  async function loadSceneAsync(stem) { if (!stem) return null; if (cache[stem]) return cache[stem]; const raw = await (await fetch('scenes/' + stem + '.scene.json?v=' + BUILD)).json(); const s = new FVScene(raw); await s.load(); cache[stem] = s; return s; }
+  async function itemArt(name) {
+    const stem = scenesByName[name]; if (!stem) return null;
+    const sc = await loadSceneAsync(stem); if (!sc) return null;
+    const sym = sc.symbols().length ? sc.symbols()[0] : null;
+    const b = sym ? sc.measure(0, sym) : sc.measure(0, ''); if (!b.w || !b.h) return null;
+    const c = document.createElement('canvas'), S = 128; c.width = S; c.height = S; const g = c.getContext('2d');
+    const k = Math.min(S * 0.86 / b.w, S * 0.86 / b.h);
+    g.translate((S - b.w * k) / 2 - b.x * k, (S - b.h * k) / 2 - b.y * k); g.scale(k, k);
+    if (sym) sc.renderSymbol(g, sym, [1, 0, 0, 1, 0, 0], 0); else sc.render(g, 0);
+    c.ready = true; return c;
+  }
+  function draw() {
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, innerWidth, innerHeight);
+    ctx.fillStyle = '#1c3a24'; ctx.fillRect(0, 0, innerWidth, innerHeight);
+    if (win) win.render(ctx, innerWidth, innerHeight);
+  }
+  canvas.addEventListener('mouseup', e => { if (!win) return; const r = canvas.getBoundingClientRect(); win.up(e.clientX - r.left, e.clientY - r.top); draw(); });
+  canvas.addEventListener('mousemove', e => { if (!win) return; const r = canvas.getBoundingClientRect(); canvas.style.cursor = win.move(e.clientX - r.left, e.clientY - r.top) ? 'pointer' : 'default'; });
+
+  (async () => {
+    resize();
+    try {
+      scenesByName = await (await fetch('scenesbyname.json')).json();
+      const raw = await (await fetch('scenes/dlg_FV_Market_LE.scene.json?v=' + BUILD)).json();
+      const scene = new FVScene(raw); await scene.load();
+      win = new FVMarketWindow(scene, { artFor: itemArt, level: 1, onBuy: n => { metaEl.textContent = 'BUY ' + n; } });
+      const tabs = [];
+      for (let i = 1; i <= 8; i++) { const img = new Image(); img.src = 'market/tab' + i + '.png'; await new Promise(r => { img.onload = r; img.onerror = r; }); tabs.push(img); }
+      win.setIcons(tabs);
+      let items = [];
+      try {
+        const data = await fetch('/api/items?buyable=1&limit=8').then(r => r.json());
+        items = data.items || [];
+        for (const it of items) { const art = await itemArt(it.name); if (art) (win._art = win._art || {})[it.name] = art; }
+      } catch (e) { /* offline */ }
+      win.setItems(items);
+      (function loop() { frames++; draw(); if (!STOP || frames < STOP) requestAnimationFrame(loop); })();
+      const b = scene.measure(0, '');
+      metaEl.textContent = 'slots=' + win.grid.slots.length + ' perPage=' + win.perPage + '  window=' + Math.round(b.w) + 'x' + Math.round(b.h) + '  items=' + items.length;
+    } catch (e) { const d = document.createElement('div'); d.id = 'err'; d.textContent = 'Failed: ' + e.message; document.body.appendChild(d); }
+  })();
+})();
+</script>
+</body>
+</html>
